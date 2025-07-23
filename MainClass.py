@@ -1,3 +1,4 @@
+from project.MainClass import MainClass
 
 import os
 
