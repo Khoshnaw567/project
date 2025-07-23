@@ -1,5 +1,3 @@
-from project.MainClass import MainClass
-
 import os
 
 def deco(color: str):
