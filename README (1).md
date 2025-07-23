@@ -136,7 +136,7 @@ Push your code to GitHub and GitHub Actions will run your tests automatically us
 
 ## 👥 Authors
 
-- Team: MiQDAD, Jwan, and friends 🧠
+- Team: Youssief Kosba, Omar Kareem, Irena Urquia 🧠
 - Date: July 2025
 
 ---
