@@ -120,3 +120,5 @@ class MainClass:
         Creates a default example instance.
         """
         return cls("example.txt")
+
+
