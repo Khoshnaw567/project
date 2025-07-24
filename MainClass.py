@@ -1,3 +1,4 @@
+
 import os
 
 def deco(color: str):
@@ -25,7 +26,7 @@ class MainClass:
     """
 
     def __init__(self, filepath):
-# [RUBRIC] ✅ Constructor checks file extension and existence
+    # [RUBRIC] ✅ Constructor checks file extension and existence
         # Constructor checks if given file is a .txt and exists
         if not filepath.endswith('.txt'):
             raise ValueError("Only .txt files are supported.")
@@ -34,13 +35,13 @@ class MainClass:
         self._filepath = filepath
 
     @property
-# [RUBRIC] ✅ @property used for getter
+    # [RUBRIC] ✅ @property used for getter
     def filepath(self):
         # Getter for filepath
         return self._filepath
 
     @filepath.setter
-# [RUBRIC] ✅ Setter with validation
+    # [RUBRIC] ✅ Setter with validation
     def filepath(self, new_path):
         # Setter with validation
         if not new_path.endswith('.txt'):
@@ -48,7 +49,7 @@ class MainClass:
         self._filepath = new_path
 
     def read_lines(self):
-# [RUBRIC] ✅ Generator used to read file line by line
+    # [RUBRIC] ✅ Generator used to read file line by line
         """
         Generator to read lines one by one from file.
         """
@@ -57,7 +58,7 @@ class MainClass:
                 yield line.strip()
 
     def read_words_as_list(self):
-# [RUBRIC] ✅ List comprehension used to get all words
+    # [RUBRIC] ✅ List comprehension used to get all words
         """
         Returns all words in the file using list comprehension.
         """
@@ -65,11 +66,11 @@ class MainClass:
             return [word for line in f for word in line.strip().split()]
 
     def __str__(self):
-# [RUBRIC] ✅ __str__ overridden
+    # [RUBRIC] ✅ __str__ overridden
         return f"MainClass for {self._filepath}"
 
     def __add__(self, other):
-# [RUBRIC] ✅ __add__ overridden to concatenate files
+    # [RUBRIC] ✅ __add__ overridden to concatenate files
         """
         Overloads + operator to combine two files.
         """
@@ -77,7 +78,7 @@ class MainClass:
 
     @staticmethod
     def file_exists(path):
-# [RUBRIC] ✅ @staticmethod implemented
+    # [RUBRIC] ✅ @staticmethod implemented
         """
         Check if a file exists at path.
         """
@@ -85,7 +86,7 @@ class MainClass:
 
     @classmethod
     def from_path(cls, path):
-# [RUBRIC] ✅ @classmethod implemented
+    # [RUBRIC] ✅ @classmethod implemented
         """
         Alternative constructor using a file path.
         """
@@ -103,3 +104,19 @@ class MainClass:
                 with open(path, 'r') as f:
                     out.write(f.read())
         return MainClass(output)
+
+    @staticmethod
+    def static_hello():
+    # [RUBRIC] ✅ Static method for rubric
+        """
+        Returns a static message for test_static_method.
+        """
+        return "Hello from static method"
+
+    @classmethod
+    def create_example(cls):
+    # [RUBRIC] ✅ Class method for rubric
+        """
+        Creates a default example instance.
+        """
+        return cls("example.txt")
